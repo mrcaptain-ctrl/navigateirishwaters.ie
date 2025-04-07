@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Navigate Irish Waters</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    /* Reuse styles from main site */
+    :root {
+      --primary: #0a4d68;
+      --primary-dark: #083a4f;
+      --secondary: #0099ff;
+      --accent: #ffcc00;
+      --dark: #1a1a1a;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+    }
+    
+    .blog-header {
+      background: linear-gradient(rgba(10,77,104,0.8), rgba(10,77,104,0.9)), url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=60&auto=format&fit=crop') no-repeat center center;
+      background-size: cover;
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .blog-post {
+      margin-bottom: 50px;
+      transition: transform 0.3s;
+    }
+    
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-post img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    .blog-post .card {
+      border: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .blog-post .card-body {
+      padding: 20px;
+    }
+    
+    .blog-post .card-title {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .blog-post .card-text {
+      color: #666;
+    }
+    
+    .blog-post .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .blog-post .read-more:hover {
+      color: var(--primary-dark);
+    }
+    
+    .blog-sidebar {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .blog-sidebar h4 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .blog-sidebar .list-group-item {
+      border: none;
+      padding: 10px 0;
+    }
+    
+    .blog-sidebar .list-group-item:hover {
+      background: none;
+      color: var(--primary);
+    }
+    
+    .blog-tags .badge {
+      background: var(--light);
+      color: var(--primary);
+      margin: 5px;
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
+    
+    .blog-tags .badge:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Navigate Irish Waters</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Blog Header -->
+  <header class="blog-header">
+    <div class="container">
+      <h1 class="display-4">Maritime Blog</h1>
+      <p class="lead">Insights, tips, and stories from the Irish waters</p>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <div class="container py-5">
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <!-- Featured Post -->
+        <div class="blog-post">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1566840767200-7e8ce15186e9?w=800&q=60&auto=format&fit=crop" class="card-img-top" alt="Maritime Safety Measures">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge bg-primary">Featured</span>
+                <small class="text-muted">March 15, 2024</small>
+              </div>
+              <h2 class="card-title">Maritime Safety Measures</h2>
+              <p class="card-text">Safety is always a priority in yachting. In this comprehensive guide, we discuss essential safety measures and emergency procedures that every yachter should know.</p>
+              <a href="maritime-safety-measures.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="blog-post">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1602525618962-33c0c089fea7?w=400&q=60&auto=format&fit=crop" class="card-img-top" alt="Ireland's Yacht Routes">
+                <div class="card-body">
+                  <small class="text-muted">March 10, 2024</small>
+                  <h3 class="card-title h5">Ireland's Most Beautiful Yacht Routes</h3>
+                  <p class="card-text">Discover the most stunning sailing routes along Ireland's west coast.</p>
+                  <a href="irelands-yacht-routes.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="blog-post">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1579103805048-15c4c134ab22?w=400&q=60&auto=format&fit=crop" class="card-img-top" alt="Yacht Maintenance">
+                <div class="card-body">
+                  <small class="text-muted">March 5, 2024</small>
+                  <h3 class="card-title h5">Yacht Maintenance and Winter Season Preparations</h3>
+                  <p class="card-text">Essential tips for preparing your yacht for the winter season.</p>
+                  <a href="yacht-maintenance.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="blog-post">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1498623116890-37e912163d5d?w=400&q=60&auto=format&fit=crop" class="card-img-top" alt="Sailing Tips for Beginners">
+                <div class="card-body">
+                  <small class="text-muted">March 1, 2024</small>
+                  <h3 class="card-title h5">Sailing Tips for Beginners</h3>
+                  <p class="card-text">Essential tips and tricks for those new to sailing in Irish waters.</p>
+                  <a href="sailing-tips-beginners.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="blog-post">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1576590280003-8b7d622e2981?w=400&q=60&auto=format&fit=crop" class="card-img-top" alt="Yacht Charter Guide">
+                <div class="card-body">
+                  <small class="text-muted">February 25, 2024</small>
+                  <h3 class="card-title h5">Yacht Charter Guide in Ireland</h3>
+                  <p class="card-text">Everything you need to know about chartering a yacht in Irish waters.</p>
+                  <a href="yacht-charter-guide.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="blog-post">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1521145239174-279dc2227136?w=400&q=60&auto=format&fit=crop" class="card-img-top" alt="Sailing Terms Guide">
+                <div class="card-body">
+                  <small class="text-muted">April 7, 2024</small>
+                  <h3 class="card-title h5">Essential Sailing Terms Guide</h3>
+                  <p class="card-text">A comprehensive guide to sailing terminology and definitions for both beginners and experienced sailors.</p>
+                  <a href="sailing-terms-guide.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="blog-sidebar">
+          <h4>Categories</h4>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Safety & Navigation</a>
+            <a href="#" class="list-group-item list-group-item-action">Yacht Maintenance</a>
+            <a href="#" class="list-group-item list-group-item-action">Irish Waters</a>
+            <a href="#" class="list-group-item list-group-item-action">Sailing Tips</a>
+          </div>
+
+          <h4 class="mt-4">Popular Tags</h4>
+          <div class="blog-tags">
+            <a href="#" class="badge">Safety</a>
+            <a href="#" class="badge">Navigation</a>
+            <a href="#" class="badge">Maintenance</a>
+            <a href="#" class="badge">Ireland</a>
+            <a href="#" class="badge">Sailing</a>
+            <a href="#" class="badge">Yachting</a>
+          </div>
+
+          <h4 class="mt-4">Recent Posts</h4>
+          <div class="list-group">
+            <a href="maritime-safety-measures.html" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Maritime Safety Measures</h5>
+                <small>March 15</small>
+              </div>
+            </a>
+            <a href="irelands-yacht-routes.html" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Ireland's Yacht Routes</h5>
+                <small>March 10</small>
+              </div>
+            </a>
+            <a href="yacht-maintenance.html" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Yacht Maintenance Guide</h5>
+                <small>March 5</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2024 Navigate Irish Waters. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="privacy-policy.html" class="text-white me-3">Privacy Policy</a>
+          <a href="cookie-notice.html" class="text-white">Cookie Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Show back to top button when user scrolls past 300px
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html> 
