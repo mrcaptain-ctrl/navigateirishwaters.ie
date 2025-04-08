@@ -56,8 +56,70 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* Custom styles for tabs */
+    .nav-tabs .nav-link {
+      color: #0a4d68;
+      font-weight: 500;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 0;
+      margin-right: 2px;
+    }
+    
+    .nav-tabs .nav-link.active {
+      color: white;
+      background-color: #0a4d68;
+      border: none;
+    }
+    
+    .nav-tabs .nav-link:hover:not(.active) {
+      background-color: #f0f0f0;
+      border: none;
+    }
+    
+    .tab-content {
+      padding: 30px;
+      border: 1px solid #dee2e6;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+    
+    .secondary-tabs {
+      margin-bottom: 25px;
+    }
+    
+    .secondary-tabs .nav-link {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Navigate Irish Waters</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <div class="container mt-5">
     <div class="row">
       <div class="col-lg-8 mx-auto">
@@ -71,119 +133,237 @@
             </div>
           </header>
 
-          <div class="content">
-            <section id="introduction">
-              <h2>Introduction to Yacht Chartering</h2>
-              <p>Detailed introduction about yacht chartering in Ireland...</p>
-            </section>
+          <!-- Main Tab Navigation -->
+          <ul class="nav nav-tabs mt-4" id="mainTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="basics-tab" data-bs-toggle="tab" data-bs-target="#basics" type="button" role="tab" aria-controls="basics" aria-selected="true">
+                <i class="fas fa-info-circle"></i> Basics
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="charter-types-tab" data-bs-toggle="tab" data-bs-target="#charter-types" type="button" role="tab" aria-controls="charter-types" aria-selected="false">
+                <i class="fas fa-ship"></i> Charter Types
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="planning-tab" data-bs-toggle="tab" data-bs-target="#planning" type="button" role="tab" aria-controls="planning" aria-selected="false">
+                <i class="fas fa-clipboard-list"></i> Planning
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="destinations-tab" data-bs-toggle="tab" data-bs-target="#destinations" type="button" role="tab" aria-controls="destinations" aria-selected="false">
+                <i class="fas fa-map-marked-alt"></i> Destinations
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="help-tab" data-bs-toggle="tab" data-bs-target="#help" type="button" role="tab" aria-controls="help" aria-selected="false">
+                <i class="fas fa-question-circle"></i> FAQ
+              </button>
+            </li>
+          </ul>
 
-            <section id="charter-types">
-              <h2>Types of Yacht Charters</h2>
+          <!-- Tab Content -->
+          <div class="tab-content" id="mainTabContent">
+            <!-- Basics Tab -->
+            <div class="tab-pane fade show active" id="basics" role="tabpanel" aria-labelledby="basics-tab">
+              <section id="introduction">
+                <h2>Introduction to Yacht Chartering</h2>
+                <p>Detailed introduction about yacht chartering in Ireland...</p>
+              </section>
               
-              <h3>Bareboat Charter</h3>
-              <p>Detailed explanation of bareboat chartering...</p>
-              <ul>
-                <li>Requirements and qualifications</li>
-                <li>Responsibilities and considerations</li>
-                <li>Cost implications</li>
-              </ul>
+              <section id="costs">
+                <h2>Charter Costs and Considerations</h2>
+                <div class="cost-breakdown">
+                  <h3>Base Charter Fee</h3>
+                  <p>Explanation of basic charter costs...</p>
 
-              <h3>Skippered Charter</h3>
-              <p>Information about skippered charters...</p>
-              <ul>
-                <li>Benefits of professional skipper</li>
-                <li>Learning opportunities</li>
-                <li>Cost considerations</li>
-              </ul>
-
-              <h3>Luxury Crewed Charter</h3>
-              <p>Details about full-service crewed charters...</p>
-            </section>
-
-            <section id="costs">
-              <h2>Charter Costs and Considerations</h2>
-              <div class="cost-breakdown">
-                <h3>Base Charter Fee</h3>
-                <p>Explanation of basic charter costs...</p>
-
-                <h3>Additional Costs</h3>
+                  <h3>Additional Costs</h3>
+                  <ul>
+                    <li>Fuel and mooring fees</li>
+                    <li>Insurance options</li>
+                    <li>Provisioning</li>
+                    <li>Equipment rental</li>
+                  </ul>
+                </div>
+              </section>
+              
+              <section id="requirements">
+                <h2>Legal Requirements and Documentation</h2>
                 <ul>
-                  <li>Fuel and mooring fees</li>
-                  <li>Insurance options</li>
-                  <li>Provisioning</li>
-                  <li>Equipment rental</li>
+                  <li>Licensing requirements</li>
+                  <li>Insurance requirements</li>
+                  <li>Safety certifications</li>
+                  <li>International requirements</li>
                 </ul>
-              </div>
-            </section>
-
-            <section id="requirements">
-              <h2>Legal Requirements and Documentation</h2>
-              <ul>
-                <li>Licensing requirements</li>
-                <li>Insurance requirements</li>
-                <li>Safety certifications</li>
-                <li>International requirements</li>
+              </section>
+            </div>
+            
+            <!-- Charter Types Tab -->
+            <div class="tab-pane fade" id="charter-types" role="tabpanel" aria-labelledby="charter-types-tab">
+              <!-- Secondary tabs for Charter Types -->
+              <ul class="nav nav-tabs secondary-tabs" id="charterTypesTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="bareboat-tab" data-bs-toggle="tab" data-bs-target="#bareboat" type="button" role="tab" aria-controls="bareboat" aria-selected="true">Bareboat</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="skippered-tab" data-bs-toggle="tab" data-bs-target="#skippered" type="button" role="tab" aria-controls="skippered" aria-selected="false">Skippered</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="crewed-tab" data-bs-toggle="tab" data-bs-target="#crewed" type="button" role="tab" aria-controls="crewed" aria-selected="false">Crewed</button>
+                </li>
               </ul>
-            </section>
+              
+              <div class="tab-content" id="charterTypesContent">
+                <div class="tab-pane fade show active" id="bareboat" role="tabpanel" aria-labelledby="bareboat-tab">
+                  <h3>Bareboat Charter</h3>
+                  <p>Detailed explanation of bareboat chartering...</p>
+                  <ul>
+                    <li>Requirements and qualifications</li>
+                    <li>Responsibilities and considerations</li>
+                    <li>Cost implications</li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="skippered" role="tabpanel" aria-labelledby="skippered-tab">
+                  <h3>Skippered Charter</h3>
+                  <p>Information about skippered charters...</p>
+                  <ul>
+                    <li>Benefits of professional skipper</li>
+                    <li>Learning opportunities</li>
+                    <li>Cost considerations</li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="crewed" role="tabpanel" aria-labelledby="crewed-tab">
+                  <h3>Luxury Crewed Charter</h3>
+                  <p>Details about full-service crewed charters...</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Planning Tab -->
+            <div class="tab-pane fade" id="planning" role="tabpanel" aria-labelledby="planning-tab">
+              <!-- Secondary tabs for Planning -->
+              <ul class="nav nav-tabs secondary-tabs" id="planningTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="seasons-tab" data-bs-toggle="tab" data-bs-target="#seasons" type="button" role="tab" aria-controls="seasons" aria-selected="true">Seasons</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="preparation-tab" data-bs-toggle="tab" data-bs-target="#preparation" type="button" role="tab" aria-controls="preparation" aria-selected="false">Preparation</button>
+                </li>
+              </ul>
+              
+              <div class="tab-content" id="planningContent">
+                <div class="tab-pane fade show active" id="seasons" role="tabpanel" aria-labelledby="seasons-tab">
+                  <h2>Seasonal Charter Guide</h2>
+                  <h3>Peak Season (June-August)</h3>
+                  <p>Information about summer chartering...</p>
 
-            <section id="destinations">
+                  <h3>Shoulder Season (April-May, September-October)</h3>
+                  <p>Details about spring and fall chartering...</p>
+
+                  <h3>Off-Season (November-March)</h3>
+                  <p>Winter chartering considerations...</p>
+                </div>
+                <div class="tab-pane fade" id="preparation" role="tabpanel" aria-labelledby="preparation-tab">
+                  <h2>Charter Preparation Tips</h2>
+                  <div class="preparation-checklist">
+                    <h3>Before Booking</h3>
+                    <ul>
+                      <li>Research and planning tips</li>
+                      <li>Booking timing considerations</li>
+                      <li>Crew selection advice</li>
+                    </ul>
+
+                    <h3>Pre-Departure</h3>
+                    <ul>
+                      <li>Required documentation</li>
+                      <li>Provisioning guidelines</li>
+                      <li>Weather planning</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Destinations Tab -->
+            <div class="tab-pane fade" id="destinations" role="tabpanel" aria-labelledby="destinations-tab">
               <h2>Popular Charter Destinations</h2>
               
-              <h3>Dublin Bay</h3>
-              <p>Details about Dublin Bay chartering...</p>
-
-              <h3>Cork Harbour</h3>
-              <p>Information about Cork Harbour...</p>
-            </section>
-
-            <section id="seasonal-guide">
-              <h2>Seasonal Charter Guide</h2>
-              
-              <h3>Peak Season (June-August)</h3>
-              <p>Information about summer chartering...</p>
-
-              <h3>Shoulder Season (April-May, September-October)</h3>
-              <p>Details about spring and fall chartering...</p>
-
-              <h3>Off-Season (November-March)</h3>
-              <p>Winter chartering considerations...</p>
-            </section>
-
-            <section id="preparation">
-              <h2>Charter Preparation Tips</h2>
-              <div class="preparation-checklist">
-                <h3>Before Booking</h3>
-                <ul>
-                  <li>Research and planning tips</li>
-                  <li>Booking timing considerations</li>
-                  <li>Crew selection advice</li>
-                </ul>
-
-                <h3>Pre-Departure</h3>
-                <ul>
-                  <li>Required documentation</li>
-                  <li>Provisioning guidelines</li>
-                  <li>Weather planning</li>
-                </ul>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h3>Dublin Bay</h3>
+                      <p>Details about Dublin Bay chartering...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h3>Cork Harbour</h3>
+                      <p>Information about Cork Harbour...</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </section>
-
-            <section id="faq">
-              <h2>Frequently Asked Questions</h2>
-              <div class="faq-section">
-                <!-- FAQ items -->
-              </div>
-            </section>
-          </div>
-
-          <footer class="article-footer">
-            <div class="tags">
-              <span class="tag">Yacht Charter</span>
-              <span class="tag">Sailing Guide</span>
-              <span class="tag">Ireland</span>
             </div>
-            <div class="share-buttons">
-              <!-- Social share buttons -->
+            
+            <!-- FAQ Tab -->
+            <div class="tab-pane fade" id="help" role="tabpanel" aria-labelledby="help-tab">
+              <section id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        What qualifications do I need to charter a yacht in Ireland?
+                      </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        <p>Details about required qualifications...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        What is the best time of year to charter in Ireland?
+                      </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        <p>Information about seasonal considerations...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        How much does it cost to charter a yacht in Ireland?
+                      </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        <p>Details about charter costs and variables...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          
+          <footer class="article-footer mt-4">
+            <div class="tags">
+              <span class="badge bg-primary">Yacht Charter</span>
+              <span class="badge bg-primary">Sailing Guide</span>
+              <span class="badge bg-primary">Ireland</span>
+            </div>
+            <div class="share-buttons mt-3">
+              <a href="#" class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i> Share</a>
+              <a href="#" class="btn btn-outline-info"><i class="fab fa-twitter"></i> Tweet</a>
+              <a href="#" class="btn btn-outline-success"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
           </footer>
         </article>
