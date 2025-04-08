@@ -79,37 +79,190 @@
     }
     
     .blog-sidebar {
-      background: var(--light);
-      padding: 20px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      background: white;
+    }
+    
+    .widget-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 0.75rem;
+      position: relative;
+    }
+    
+    .widget-title:after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 2px;
+      background: var(--primary);
+      bottom: -2px;
+      left: 0;
+    }
+    
+    /* Categories styling */
+    .categories-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .category-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: #f9f9f9;
       border-radius: 10px;
+      text-decoration: none;
+      color: var(--dark);
+      transition: all 0.3s;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     }
     
-    .blog-sidebar h4 {
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    
-    .blog-sidebar .list-group-item {
-      border: none;
-      padding: 10px 0;
-    }
-    
-    .blog-sidebar .list-group-item:hover {
-      background: none;
-      color: var(--primary);
-    }
-    
-    .blog-tags .badge {
-      background: var(--light);
-      color: var(--primary);
-      margin: 5px;
-      padding: 8px 15px;
-      border-radius: 20px;
-    }
-    
-    .blog-tags .badge:hover {
+    .category-icon {
+      width: 40px;
+      height: 40px;
       background: var(--primary);
       color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-size: 1.1rem;
+    }
+    
+    .category-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .category-info small {
+      color: #888;
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+    
+    .category-item:hover {
+      transform: translateY(-3px);
+      background: #f0f8ff;
+    }
+    
+    /* Tags styling */
+    .tags-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .tag-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 15px;
+      background: #f5f5f5;
+      border-radius: 50px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      border: 1px solid #eaeaea;
+    }
+    
+    .tag-item i {
+      font-size: 0.75rem; 
+    }
+    
+    .tag-item:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+    
+    /* Recent posts styling */
+    .recent-posts {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .recent-post-item {
+      display: flex;
+      text-decoration: none;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #f9f9f9;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+    
+    .recent-post-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .post-image {
+      width: 100px;
+      min-width: 100px;
+      height: 100px;
+      position: relative;
+    }
+    
+    .post-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .post-date-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(10, 77, 104, 0.85);
+      color: white;
+      padding: 5px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    .post-date-badge span {
+      font-size: 1.1rem;
+    }
+    
+    .post-date-badge small {
+      font-size: 0.7rem;
+      margin-top: 2px;
+    }
+    
+    .post-content {
+      padding: 12px;
+      color: var(--dark);
+      flex: 1;
+    }
+    
+    .post-content h5 {
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .post-excerpt {
+      font-size: 0.8rem;
+      color: #777;
+      margin: 0;
+      line-height: 1.4;
     }
 
     /* Back to Top Button */
@@ -271,44 +424,115 @@
       <!-- Sidebar -->
       <div class="col-lg-4">
         <div class="blog-sidebar">
-          <h4>Categories</h4>
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">Safety & Navigation</a>
-            <a href="#" class="list-group-item list-group-item-action">Yacht Maintenance</a>
-            <a href="#" class="list-group-item list-group-item-action">Irish Waters</a>
-            <a href="#" class="list-group-item list-group-item-action">Sailing Tips</a>
+          <div class="sidebar-widget">
+            <h4 class="widget-title">
+              <i class="fas fa-folder me-2"></i>Categories
+            </h4>
+            <div class="categories-list">
+              <a href="#" class="category-item">
+                <div class="category-icon">
+                  <i class="fas fa-compass"></i>
+                </div>
+                <div class="category-info">
+                  <span>Safety & Navigation</span>
+                  <small>Essential guides for safe sailing</small>
+                </div>
+                <span class="badge rounded-pill bg-primary">7</span>
+              </a>
+              <a href="#" class="category-item">
+                <div class="category-icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <div class="category-info">
+                  <span>Yacht Maintenance</span>
+                  <small>Keep your vessel in top condition</small>
+                </div>
+                <span class="badge rounded-pill bg-primary">4</span>
+              </a>
+              <a href="#" class="category-item">
+                <div class="category-icon">
+                  <i class="fas fa-water"></i>
+                </div>
+                <div class="category-info">
+                  <span>Irish Waters</span>
+                  <small>Exploring Ireland's coastline</small>
+                </div>
+                <span class="badge rounded-pill bg-primary">6</span>
+              </a>
+              <a href="#" class="category-item">
+                <div class="category-icon">
+                  <i class="fas fa-ship"></i>
+                </div>
+                <div class="category-info">
+                  <span>Sailing Tips</span>
+                  <small>Improve your sailing skills</small>
+                </div>
+                <span class="badge rounded-pill bg-primary">5</span>
+              </a>
+            </div>
           </div>
 
-          <h4 class="mt-4">Popular Tags</h4>
-          <div class="blog-tags">
-            <a href="#" class="badge">Safety</a>
-            <a href="#" class="badge">Navigation</a>
-            <a href="#" class="badge">Maintenance</a>
-            <a href="#" class="badge">Ireland</a>
-            <a href="#" class="badge">Sailing</a>
-            <a href="#" class="badge">Yachting</a>
+          <div class="sidebar-widget mt-5">
+            <h4 class="widget-title">
+              <i class="fas fa-tags me-2"></i>Popular Tags
+            </h4>
+            <div class="tags-cloud">
+              <a href="#" class="tag-item"><i class="fas fa-life-ring me-1"></i>Safety</a>
+              <a href="#" class="tag-item"><i class="fas fa-compass me-1"></i>Navigation</a>
+              <a href="#" class="tag-item"><i class="fas fa-wrench me-1"></i>Maintenance</a>
+              <a href="#" class="tag-item"><i class="fas fa-map-marker-alt me-1"></i>Ireland</a>
+              <a href="#" class="tag-item"><i class="fas fa-wind me-1"></i>Sailing</a>
+              <a href="#" class="tag-item"><i class="fas fa-anchor me-1"></i>Yachting</a>
+              <a href="#" class="tag-item"><i class="fas fa-cloud-sun me-1"></i>Weather</a>
+              <a href="#" class="tag-item"><i class="fas fa-route me-1"></i>Routes</a>
+            </div>
           </div>
 
-          <h4 class="mt-4">Recent Posts</h4>
-          <div class="list-group">
-            <a href="maritime-safety-measures.html" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Maritime Safety Measures</h5>
-                <small>March 15</small>
-              </div>
-            </a>
-            <a href="irelands-yacht-routes.html" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Ireland's Yacht Routes</h5>
-                <small>March 10</small>
-              </div>
-            </a>
-            <a href="yacht-maintenance.html" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Yacht Maintenance Guide</h5>
-                <small>March 5</small>
-              </div>
-            </a>
+          <div class="sidebar-widget mt-5">
+            <h4 class="widget-title">
+              <i class="fas fa-clock me-2"></i>Recent Posts
+            </h4>
+            <div class="recent-posts">
+              <a href="maritime-safety-measures.html" class="recent-post-item">
+                <div class="post-image">
+                  <img src="/images/blog/sailing boat12.jpg" alt="Maritime Safety">
+                  <div class="post-date-badge">
+                    <span>15</span>
+                    <small>MAR</small>
+                  </div>
+                </div>
+                <div class="post-content">
+                  <h5>Maritime Safety Measures</h5>
+                  <p class="post-excerpt">Essential safety guidelines for all sailors</p>
+                </div>
+              </a>
+              <a href="irelands-yacht-routes.html" class="recent-post-item">
+                <div class="post-image">
+                  <img src="/images/blog/sailing boat17.jpg" alt="Ireland's Yacht Routes">
+                  <div class="post-date-badge">
+                    <span>10</span>
+                    <small>MAR</small>
+                  </div>
+                </div>
+                <div class="post-content">
+                  <h5>Ireland's Yacht Routes</h5>
+                  <p class="post-excerpt">Stunning sailing routes along Ireland's coast</p>
+                </div>
+              </a>
+              <a href="yacht-maintenance.html" class="recent-post-item">
+                <div class="post-image">
+                  <img src="/images/blog/sailing boat15.jpg" alt="Yacht Maintenance">
+                  <div class="post-date-badge">
+                    <span>05</span>
+                    <small>MAR</small>
+                  </div>
+                </div>
+                <div class="post-content">
+                  <h5>Yacht Maintenance Guide</h5>
+                  <p class="post-excerpt">Winter preparation tips for your vessel</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
